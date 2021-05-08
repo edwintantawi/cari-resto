@@ -93,11 +93,11 @@ const createDetailBody = (restaurant) => `
         <button type="submit">Give Review</button>
       </form>
       <ul>
-        ${restaurant.customerReviews.map((review) => (`<li>
+        ${restaurant.customerReviews.map((review) => (`<li class="review__user">
             <div>
-            <span class="avatar">${review.name[0]}</span>
+            <span class="avatar">${review.name ? review.name[0] : '-'}</span>
             </div>
-            <div>
+            <div class="review__info">
             <h3> ${review.name}</h3>
             <p> ${review.review}</p>
             <time> ${review.date}</time>
