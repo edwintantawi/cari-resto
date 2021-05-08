@@ -1,0 +1,2 @@
+describe('Remove Favorite Restaurant', () => {
+});
