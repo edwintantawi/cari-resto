@@ -121,7 +121,7 @@ const createUnFavoriteButton = () => `
 
 const createEmpty = () => `
   <div class="indicator">
-    <p class="text-center">Oops ... it looks like your Favorites List is empty<h2>
+    <p class="text-center" id="empty-favorite-state">Oops ... it looks like your Favorites List is empty<h2>
   </div>
 `;
 
