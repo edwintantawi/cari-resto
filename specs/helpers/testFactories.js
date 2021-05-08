@@ -1,9 +1,11 @@
 /* eslint-disable import/prefer-default-export */
-import FavoriteButtonInitiator from '../../src/scripts/utils/favorite-button-initiator';
+import FavoriteRestaurantIdb from '../../src/scripts/data/favoriteRestaurant-idb';
+import FavoriteButtonPresenter from '../../src/scripts/utils/favorite-button-presenter';
 
 const createFavoriteButtonPresenterWithRestaurant = async (restaurant) => {
-  await FavoriteButtonInitiator.init({
+  await FavoriteButtonPresenter.init({
     favoriteButtonContainer: document.querySelector('#favorite-button-container'),
+    favoriteRestaurant: FavoriteRestaurantIdb,
     restaurant,
   });
 };

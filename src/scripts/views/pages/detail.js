@@ -1,10 +1,11 @@
 /* eslint-disable import/no-cycle */
-import FavoriteButtonInitiator from '../../utils/favorite-button-initiator';
+import FavoriteButtonPresenter from '../../utils/favorite-button-presenter';
 import RestaurantSource from '../../data/restaurant-source';
 import CONFIG from '../../globals/config';
 import UrlParser from '../../routes/url-parser';
 import ReviewInitiator from '../../utils/review-initiator';
 import { createDetailBody, createHeroDetail, createLoader } from '../templates/templates-creator';
+import FavoriteRestaurantIdb from '../../data/favoriteRestaurant-idb';
 
 const Detail = {
   async render() {
@@ -31,8 +32,9 @@ const Detail = {
     hero.innerHTML = createHeroDetail(restaurant);
     restaurantContainer.innerHTML = createDetailBody(restaurant);
 
-    FavoriteButtonInitiator.init({
+    FavoriteButtonPresenter.init({
       favoriteButtonContainer: document.querySelector('#favorite-button-container'),
+      favoriteRestaurant: FavoriteRestaurantIdb,
       restaurant: {
         id: restaurant.id,
         pictureId: restaurant.pictureId,

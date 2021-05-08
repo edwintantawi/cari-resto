@@ -1,4 +1,4 @@
-import FavoriteRestaurant from '../../data/favoriteRestaurant-idb';
+import FavoriteRestaurantIdb from '../../data/favoriteRestaurant-idb';
 import { createEmpty, createLoader, createRestaurantCard } from '../templates/templates-creator';
 
 const Favorite = {
@@ -24,7 +24,7 @@ const Favorite = {
     const restaurantContainer = document.querySelector('#root-content');
     const loaderContainer = document.querySelector('#loader-container');
     loaderContainer.innerHTML = createLoader();
-    const restaurants = await FavoriteRestaurant.getAllRestaurants();
+    const restaurants = await FavoriteRestaurantIdb.getAllRestaurants();
     loaderContainer.innerHTML = '';
     if (restaurants.length === 0) loaderContainer.innerHTML = createEmpty();
     restaurants.forEach((restaurant) => {

@@ -9,7 +9,7 @@ const database = openDB(DATABASE_NAME, DATABASE_VERSION, {
   },
 });
 
-const FavoriteRestaurant = {
+const FavoriteRestaurantIdb = {
   async getAllRestaurants() {
     return (await database).getAll(OBJECT_STORE_NAME);
   },
@@ -26,4 +26,4 @@ const FavoriteRestaurant = {
   },
 };
 
-export default FavoriteRestaurant;
+export default FavoriteRestaurantIdb;
