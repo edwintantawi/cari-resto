@@ -108,13 +108,13 @@ const createDetailBody = (restaurant) => `
   </div>
 `;
 
-const createUnFavoriteButton = () => `
-  <button aria-label="remove from favorite" id="favorit-button" class="favorite">
+const createFavoriteButton = () => `
+  <button aria-label="add restaurant to favorite" id="favorite-button" class="favorite">
     <i class="far fa-heart" aria-hidden="true"></i>
   </button>
 `;
-const createFavoriteButton = () => `
-  <button aria-label="add to favorite" id="favorit-button" class="favorite">
+const createUnFavoriteButton = () => `
+  <button aria-label="remove restaurant from favorite" id="favorite-button" class="favorite">
     <i class="fas fa-heart" aria-hidden="true"></i>
   </button>
 `;

@@ -6,7 +6,7 @@ const FavoriteButtonInitiator = {
     this._favoriteButtonContainer = favoriteButtonContainer;
     this._restaurant = restaurant;
 
-    this._renderButton();
+    await this._renderButton();
   },
   async _renderButton() {
     const { id } = this._restaurant;
@@ -21,16 +21,16 @@ const FavoriteButtonInitiator = {
     return !!restaurant;
   },
   _renderFavorite() {
-    this._favoriteButtonContainer.innerHTML = createUnFavoriteButton();
-    const favoriteButton = document.querySelector('#favorit-button');
+    this._favoriteButtonContainer.innerHTML = createFavoriteButton();
+    const favoriteButton = document.querySelector('#favorite-button');
     favoriteButton.addEventListener('click', async () => {
       await FavoriteRestaurant.putRestaurant(this._restaurant);
       this._renderButton();
     });
   },
   _renderUnFavorite() {
-    this._favoriteButtonContainer.innerHTML = createFavoriteButton();
-    const favoriteButton = document.querySelector('#favorit-button');
+    this._favoriteButtonContainer.innerHTML = createUnFavoriteButton();
+    const favoriteButton = document.querySelector('#favorite-button');
     favoriteButton.addEventListener('click', async () => {
       await FavoriteRestaurant.deleteRestaurant(this._restaurant.id);
       this._renderButton();
