@@ -4,10 +4,10 @@ const createRestaurantCard = (restaurant) => `
   <a class="list__item" href="#/detail/${restaurant.id}" aria-label="${restaurant.name}">
       <div class="list__image--container">
         <img
-          src="${CONFIG.BASE_IMAGE_URL}/${restaurant.pictureId}"
+          data-src="${CONFIG.BASE_IMAGE_URL}/${restaurant.pictureId}"
           alt="${restaurant.name}"
           crossorigin="anonymous"
-          class="list__image"
+          class="lazyload list__image"
         />
       </div>
       <div class="list__content">
