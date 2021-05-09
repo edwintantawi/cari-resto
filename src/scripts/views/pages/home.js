@@ -1,5 +1,5 @@
 import RestaurantSource from '../../data/restaurant-source';
-import { createLoader, createRestaurantCard } from '../templates/templates-creator';
+import { createRestaurantCard, createSkeletonRestaurantCard } from '../templates/templates-creator';
 
 const Home = {
   async render() {
@@ -19,7 +19,6 @@ const Home = {
       </div>
       <main id="main">
         <section class="container">
-          <div id="loader-container"></div>
           <div class="list" id="root-content"></div>
         </section>
       </main>
@@ -27,10 +26,9 @@ const Home = {
   },
   async afterRender() {
     const restaurantContainer = document.querySelector('#root-content');
-    const loaderContainer = document.querySelector('#loader-container');
-    loaderContainer.innerHTML = createLoader();
+    restaurantContainer.innerHTML = createSkeletonRestaurantCard();
     const restaurants = await RestaurantSource.list();
-    loaderContainer.innerHTML = '';
+    restaurantContainer.innerHTML = '';
     restaurants.forEach((restaurant) => {
       restaurantContainer.innerHTML += createRestaurantCard(restaurant);
     });

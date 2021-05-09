@@ -97,6 +97,8 @@ background-color: var(--black);
 
 .header__logo {
   height: 40px;
+  width: 118px;
+  object-fit: contain;
 }
 
 .layer {
@@ -257,7 +259,7 @@ background-color: var(--black);
 
 /* list */
 .list {
-  padding: 80px 0;
+  padding: 80px 16px;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 52px 16px;
@@ -267,7 +269,6 @@ background-color: var(--black);
   flex-direction: column;
   cursor: pointer;
   color: white;
-  padding: 0 14px;
 }
 .list__data {
   padding: 8px;
@@ -275,7 +276,7 @@ background-color: var(--black);
 
 .list__image {
   width: 100%;
-  height: auto;
+  height: 200px;
   object-fit: cover;
   transition: 350ms ease-in-out;
 }
@@ -323,6 +324,56 @@ background-color: var(--black);
   font-size: 0.9rem;
   font-weight: 700;
 }
+
+/* skeleton */
+.list__item--skeleton{
+  background-color: #1d1d1d;
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+}
+.list__item--skeleton::after{
+  content: '';
+  position: absolute;
+  width: 200px;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: skew(-32deg);
+  top: 0;
+  left: -100%;
+  animation: skeletonAnimation 1s infinite ease-in-out;
+}
+.list__item--skeleton .list__image{
+  border-radius: 12px;
+  background-color: #2f2f2f;  
+  height: 200px;
+}
+.list__item--skeleton .list__title{
+  height: 39px;
+  margin: 0 0 1px;
+  background-color: #2f2f2f;
+  border-radius: 12px;
+}
+.list__item--skeleton .list__description{
+  height: 100px;
+  background-color: #2f2f2f;
+  border-radius: 12px;
+}
+.list__item--skeleton .list__info{
+  background-color: #2f2f2f;
+  border-radius: 12px;
+  height: 67px;
+}
+
+@keyframes skeletonAnimation {
+  0%{
+    left: -100%;
+  }
+  100%{
+    left: 200%;
+  }
+}
+
 /* list detail */
 .detail{
   padding: 50px 0;
@@ -332,6 +383,7 @@ background-color: var(--black);
 }
 .detail__image{ 
   width: 100%;
+  display: flex;
   object-fit: cover;
   height: 300px;
 }

@@ -1,7 +1,8 @@
+/* eslint-disable no-plusplus */
 import CONFIG from '../../globals/config';
 
 const createRestaurantCard = (restaurant) => `
-  <a class="list__item" href="#/detail/${restaurant.id}" aria-label="${restaurant.name}">
+  <a class="list__item restaurant__card" href="#/detail/${restaurant.id}" aria-label="${restaurant.name}">
       <div class="list__image--container">
         <img
           data-src="${CONFIG.BASE_IMAGE_URL}/${restaurant.pictureId}"
@@ -30,6 +31,34 @@ const createRestaurantCard = (restaurant) => `
       </div>
     </a>
 `;
+const createSkeletonRestaurantCard = () => {
+  let skeletonCards = '';
+  for (let i = 0; i < 20; i++) {
+    skeletonCards += `
+      <div class="list__item list__item--skeleton">
+        <div class="list__image--container">
+          <div class="list__image"></div>
+        </div>
+        <div class="list__content">
+          <div class="list__data">
+            <h2 class="list__title"></h2>
+            <p class="list__description">
+            </p>
+          </div>
+          <div class="list__info">
+            <div>
+              
+            </div>
+            <div>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    `;
+  }
+  return skeletonCards;
+};
 
 const createLoader = () => `
   <div class="indicator">
@@ -133,4 +162,5 @@ export {
   createFavoriteButton,
   createUnFavoriteButton,
   createEmpty,
+  createSkeletonRestaurantCard,
 };

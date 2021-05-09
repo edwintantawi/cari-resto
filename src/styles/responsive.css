@@ -53,7 +53,7 @@
     font-size: 1.6rem;
   }
   .list {
-    padding: 100px 0;
+    padding-top: 100px;
   }
   .footer {
     padding: 32px 16px;
@@ -70,19 +70,21 @@
 }
 @media screen and (min-width: 1160px) {
   .hero {
-  background-image: url('../public/images/hero-image-large.jpg');
+    background-image: url('../public/images/hero-image-large.jpg');
   }
-.detail{
-  padding: 50px 0;
-  display: grid;
-  grid-template-columns: 500px 1fr;
-  gap: 32px;
-}
-.detail__image{ 
-  position: sticky;
-  top: 97px;
-  height: auto;
-}
+  .detail{
+    padding: 50px 0;
+    display: grid;
+    grid-template-columns: 500px 1fr;
+    gap: 32px;
+  }
+  .detail__image{ 
+    position: sticky;
+    width: 95%;
+    top: 97px;
+    height: auto;
+    margin-left: 16px;
+  }
 }
 @media screen and (min-width: 1400px) {
   .hero__content {

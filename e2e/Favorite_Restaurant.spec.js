@@ -9,28 +9,28 @@ Before(({ I }) => {
 
 Scenario('Add Restaurant to Favorite restaurant list', async ({ I }) => {
   I.amOnPage('/');
-  I.seeElement('.list__item');
-  const firstRestaurantName = await I.grabTextFrom(locate('.list__item .list__title').first());
-  I.click(locate('.list__item').first());
+  I.seeElement('.restaurant__card');
+  const firstRestaurantName = await I.grabTextFrom(locate('.restaurant__card .list__title').first());
+  I.click(locate('.restaurant__card').first());
   I.seeElement('#favorite-button');
   I.click('#favorite-button');
 
   I.amOnPage('/#/favorite');
-  I.seeElement('.list__item');
-  const favoriteRestaurantName = await I.grabTextFrom('.list__item .list__title');
+  I.seeElement('.restaurant__card');
+  const favoriteRestaurantName = await I.grabTextFrom('.restaurant__card .list__title');
   assert.strictEqual(firstRestaurantName, favoriteRestaurantName);
 });
 
 Scenario('add then Remove Restaurant from Favorite restaurant list', ({ I }) => {
   I.amOnPage('/');
-  I.seeElement('.list__item');
-  I.click(locate('.list__item').first());
+  I.seeElement('.restaurant__card');
+  I.click(locate('.restaurant__card').first());
   I.seeElement('#favorite-button');
   I.click('#favorite-button');
 
   I.amOnPage('/#/favorite');
-  I.seeElement('.list__item');
-  I.click('.list__item');
+  I.seeElement('.restaurant__card');
+  I.click('.restaurant__card');
 
   I.seeElement('#favorite-button');
   I.click('#favorite-button');

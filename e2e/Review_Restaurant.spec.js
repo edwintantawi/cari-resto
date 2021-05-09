@@ -1,19 +1,17 @@
-// Feature('Review Restaurant');
+Feature('Review Restaurant');
 
-// Scenario('Add Review for first restaurant in list', async ({ I }) => {
-//   const name = 'E2E Test 3';
-//   const review = 'Iam test review feature 3...';
+Scenario('Add Review for first restaurant in list', async ({ I }) => {
+  const name = 'E2E Test';
+  const review = 'Iam test review feature...';
 
-//   I.amOnPage('/');
-//   I.seeElement('.list__item');
-//   I.click(locate('.list__item').first());
+  I.amOnPage('/');
+  I.seeElement('.restaurant__card');
+  I.click(locate('.restaurant__card').first());
 
-//   I.seeElement('#review-form');
-//   I.fillField('#review-name', name);
-//   I.fillField('#review-review', review);
-//   I.click('#review-form button');
-//   I.refreshPage();
-//   pause();
-//   I.see(name, locate('.review__user .review__info h3').last());
-//   I.see(review, locate('.review__user .review__info p').last());
-// });
+  I.seeElement('#review-form');
+  I.fillField('#review-name', name);
+  I.fillField('#review-review', review);
+  I.click('#review-form button');
+  I.see(name, locate('.review__user .review__info h3').last());
+  I.see(review, locate('.review__user .review__info p').last());
+});
