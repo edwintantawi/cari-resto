@@ -181,7 +181,7 @@ background-color: var(--black);
   position: relative;
   padding: 130px 0 80px;
   align-items: center;
-  background-image: url('../public/hero-image.jpg');
+  background-image: url('../public/images/hero-image-small.jpg');
   background-position: center;
   background-size: cover;
   border-bottom: 10px solid var(--choco-medium);

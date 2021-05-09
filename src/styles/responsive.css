@@ -69,7 +69,9 @@
   }
 }
 @media screen and (min-width: 1160px) {
-  /* list detail */
+  .hero {
+  background-image: url('../public/images/hero-image-large.jpg');
+  }
 .detail{
   padding: 50px 0;
   display: grid;
