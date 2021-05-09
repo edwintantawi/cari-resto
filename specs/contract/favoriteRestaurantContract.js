@@ -1,6 +1,5 @@
 /* eslint-disable import/prefer-default-export */
 const itActsAsFavoriteRestaurantModel = (favoriteRestaurant) => {
-  // TODO
   it('should return the restaurant that has been added to favorite movie', async () => {
     favoriteRestaurant.putRestaurant({ id: 1 });
     favoriteRestaurant.putRestaurant({ id: 2 });
